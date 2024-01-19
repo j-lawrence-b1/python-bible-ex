@@ -1,8 +1,10 @@
 #!/usr/bin python3
 
 def main():
-    print(1+1)
-    print(105+10)
+    first_number = 1+1
+    second_number = 105+10
+    print(first_number)
+    print(second_number)
 
 if __name__ == "__main__":
     main()
