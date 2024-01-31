@@ -7,7 +7,7 @@ def main(difficulty: int = 1):
     health = 49
     potion_health = int(random.randint(24, 50) / difficulty)
     health += potion_health
-    return health
+    print(health)
 
 
 if __name__ == "__main__":
