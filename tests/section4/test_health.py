@@ -3,9 +3,13 @@
 from app.section4 import health
 
 
-def test_main_does_not_crash():
-    health.main()
-    assert True
+def test_can_main():
+    try:
+        health.main()
+    except NotImplementedError:
+        assert False
+    finally:
+        assert True
 
 
 def test_main_returns_valid_health_range(capsys):
