@@ -47,7 +47,7 @@ def main():
 
 
 if __name__ == '__main__':
-    ''''''
+    '''
     Entry point.
 
     OPEN ISSUE: Should I upgrade to setuptools and setup.py?
