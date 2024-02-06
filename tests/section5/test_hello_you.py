@@ -2,7 +2,7 @@
 
 from app.section5 import hello_you
 
-class TestHelloYou:
+class TestsHelloYou:
     '''Test the hello_you module'''
 
     def test_can_main():
