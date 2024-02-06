@@ -6,7 +6,7 @@ from app.section4 import health
 def test_can_main():
     try:
         health.main()
-    except NotImplementedError:
+    except AttributeError:
         assert False
     finally:
         assert True

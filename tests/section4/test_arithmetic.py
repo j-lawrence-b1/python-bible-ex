@@ -6,7 +6,7 @@ from app.section4 import arithmetic
 def test_can_add():
     try:
         arithmetic.add(2, 2)
-    except NotImplementedError:
+    except AttributeError:
         assert False
     finally:
         assert True
