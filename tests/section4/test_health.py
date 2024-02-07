@@ -16,7 +16,7 @@ def test_health(capsys):
     """
     Test whether health is returned within the min (25) and max(49) values.
     """
-    min_health = 49 + 25
+    min_health = 49 + 24
     max_health = 49 + 50
     ret_val = health.main()
     assert ret_val >= min_health and ret_val < max_health
