@@ -6,12 +6,6 @@ from io import StringIO
 from app.section5 import hello_you
 
 
-def test_prompt(monkeypatch):
-    inputs = StringIO("San Francisco\n")
-    monkeypatch.setattr("sys.stdin", inputs)
-    assert hello_you.prompt("Enter City") == "San Francisco"
-
-
 def test_main(monkeypatch):
     inputs = StringIO("Bobby\n3\nSF\ndiving\n")
     monkeypatch.setattr("sys.stdin", inputs)

@@ -3,22 +3,7 @@
 """Module docstring. """
 
 
-def prompt(ppt: str = "", default: str = "") -> str:
-    """
-    Prompt for console input.
-
-    Keyword arguments:
-    prompt -- Desired input hint (default: '').
-    default -- Default input value (default: '').
-
-    """
-
-    retval = input(f"{ppt}? [{default}]: ")
-    if retval is None:
-        retval = default
-
-    return retval.strip()
-
+from app.lib import console
 
 def main():
     name = None
@@ -28,25 +13,25 @@ def main():
 
     # Ask user for name.
     while not name:
-        retval = prompt("What is your name")
+        retval = console.prompt("What is your name")
         if len(retval) > 0:
             name = retval
 
     # Ask user for age.
     while not age:
-        retval = prompt("What is your age")
+        retval = console.prompt("What is your age")
         if retval.isnumeric():
             age = int(retval)
 
     # Ask user for city.
     while not city:
-        retval = prompt("What city were you born in")
+        retval = console.prompt("What city were you born in")
         if len(retval) > 0:
             city = retval
 
     # Ask user what they enjoy.
     while not activity:
-        retval = prompt("What is your favorite activity")
+        retval = console.prompt("What is your favorite activity")
         if len(retval) > 0:
             activity = retval
 
