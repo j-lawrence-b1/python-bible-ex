@@ -1,4 +1,4 @@
-from app.section3 import meeting_idle
+from src.section3 import meeting_idle
 
 
 def test_main_stdout(capsys):

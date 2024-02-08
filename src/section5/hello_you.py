@@ -3,7 +3,7 @@
 """Module docstring. """
 
 
-from app.lib import console
+from src.lib import console
 
 def main():
     name = None

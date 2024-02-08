@@ -3,7 +3,7 @@
 """Test the console module"""
 
 from io import StringIO
-from app.lib import console
+from src.lib import console
 
 
 def test_prompt(monkeypatch):

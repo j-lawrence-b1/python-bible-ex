@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from app.section5 import hello_world
+from src.section5 import hello_world
 
 
 def test_can_main():

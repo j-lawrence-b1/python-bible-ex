@@ -1,4 +1,4 @@
-from app.scratch import test1
+from src.scratch import test1
 
 # test_with_pytest.py
 

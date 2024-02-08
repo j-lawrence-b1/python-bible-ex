@@ -3,7 +3,7 @@
 """Test the hello_you module"""
 
 from io import StringIO
-from app.section5 import hello_you
+from src.section5 import hello_you
 
 
 def test_main(monkeypatch):

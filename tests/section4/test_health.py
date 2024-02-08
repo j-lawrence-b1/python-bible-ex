@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from app.section4 import health
+from src.section4 import health
 
 
 def test_can_main():

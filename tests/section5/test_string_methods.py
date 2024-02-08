@@ -2,7 +2,7 @@
 
 '''Test the string_methods module'''
 
-from app.section5 import string_methods
+from src.section5 import string_methods
 
 
 def test_can_main():

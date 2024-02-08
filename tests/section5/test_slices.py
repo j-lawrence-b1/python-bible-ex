@@ -2,7 +2,7 @@
 
 '''Test the hello_you module'''
 
-from app.section5 import slices
+from src.section5 import slices
 
 
 def test_can_main():

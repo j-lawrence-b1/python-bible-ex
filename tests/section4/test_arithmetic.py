@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from app.section4 import arithmetic
+from src.section4 import arithmetic
 
 
 def test_can_add():

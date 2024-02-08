@@ -2,7 +2,7 @@
 
 """Test the email_slicer module"""
 
-from app.section5 import email_slicer
+from src.section5 import email_slicer
 
 
 def test_can_main():

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from app.section4 import maths
+from src.section4 import maths
 
 
 def test_round_is_int():
