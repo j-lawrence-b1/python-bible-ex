@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-"""Test the hello_you module"""
+'''Test the string_methods module'''
 
-from app.section5 import email_slicer
+from app.section5 import string_methods
 
 
 def test_can_main():
     try:
-        email_slicer.main()
+        string_methods.main()
     except AttributeError:
         assert False
     finally:
@@ -15,4 +15,8 @@ def test_can_main():
 
 
 def test_main():
-    assert True
+    assert string_methods.main() == (
+            '1\nhappy birthday\nTO YOU\nwut\nFoobar\n'
+            + 'Foo bar\nFoo Bar\nTrue\nTrue\nTrue\nTrue\n6\nwups!\n-1\n'
+            + 'foo\nfoo\nfoo\nfoo\n'
+    )

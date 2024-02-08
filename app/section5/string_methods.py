@@ -37,17 +37,23 @@ def main():
     output += f'{"foo bar".title()}\n'
 
     # Detecting character classes.
-    # Output now '1\nhappy birthday\nTO YOU\nwut\nFoobar\nFoo bar\nFoo Bar\nTrue\nTrue\nTrue\nTrue\n'
+    # Output now:
+    # '1\nhappy birthday\nTO YOU\nwut\nFoobar\nFoo bar\n'
+    # 'Foo Bar\nTrue\nTrue\nTrue\nTrue\n'
     output += (
         f'{"FOO BAR".isupper()}\n{"foo bar".islower()}\n'
         + f'{"Foo Bar".istitle()}\n{"12345".isdecimal()}\n')
 
     # Detecting/locating substrings.
-    # Output now '1\nhappy birthday\nTO YOU\nwut\nFoobar\nFoo bar\nFoo Bar\nTrue\nTrue\nTrue\nTrue\n6\n'
+    # Output now:
+    # '1\nhappy birthday\nTO YOU\nwut\nFoobar\nFoo bar\n'
+    # 'Foo Bar\nTrue\nTrue\nTrue\nTrue\n6\n'
     output += f'{"Happy Birthday".index('Birthday')}\n'
 
     # str.index() throws an exception if the substring isn't found.
-    # Output now '1\nhappy birthday\nTO YOU\nwut\nFoobar\nFoo bar\nFoo Bar\nTrue\nTrue\nTrue\nTrue\n6\nwups!\n'
+    # Output now:
+    # '1\nhappy birthday\nTO YOU\nwut\nFoobar\nFoo bar\n'
+    # 'Foo Bar\nTrue\nTrue\nTrue\nTrue\n6\nwups!\n'
     try:
         'Happy Birthday'.index('foobar')
     except ValueError:
@@ -63,12 +69,12 @@ def main():
     # Output now (
     #    '1\nhappy birthday\nTO YOU\nwut\nFoobar\n'
     #   + 'Foo bar\nFoo Bar\nTrue\nTrue\nTrue\nTrue\n6\nwups!\n-1\n'
-    #   + '-1\nfoo\nfoo\nfoo\nfoo\n'
+    #   + 'foo\nfoo\nfoo\nfoo\n'
     output += (
         f'{" foo".lstrip()}\n{"foo ".rstrip()}\n'
         + f'{" foo ".strip()}\n{"0foo0".strip("0")}\n')
     return output
-    
+
 
 if __name__ == "__main__":
     """
