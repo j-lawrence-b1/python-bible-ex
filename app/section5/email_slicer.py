@@ -1,13 +1,27 @@
 #!/usr/bin/env python3
 
-'''Module docstring. '''
+'''The email slicer project'''
+
+
+'''Get user email address'''
+
+
+'''Slice out user name'''
+
+
+'''Slice out domain name'''
+
+
+'''Format message'''
+
+
+'''Display message'''
 
 
 def main():
-    '''The email slicer project'''
-
+    '''The main thing'''
     return None
-    
+
 
 if __name__ == '__main__':
     '''

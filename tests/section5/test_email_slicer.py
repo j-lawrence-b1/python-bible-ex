@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 
-'''Test the hello_you module'''
+"""Test the email_slicer module"""
 
 from app.section5 import email_slicer
 
 
 def test_can_main():
+    """Test if main() function is implemented"""
+
     try:
         email_slicer.main()
     except AttributeError:
@@ -15,4 +17,6 @@ def test_can_main():
 
 
 def test_main():
-    pass
+    """Test if main() runs without error"""
+
+    email_slicer.main()
