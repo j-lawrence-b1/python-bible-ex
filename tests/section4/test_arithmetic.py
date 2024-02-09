@@ -4,12 +4,15 @@ from src.section4 import arithmetic
 
 
 def test_can_add():
+    """Test whether the main() function exists."""
     try:
-        arithmetic.add(2, 2)
+        arithmetic.add()
     except AttributeError:
+        # main() is not implemented.
         assert False
-    finally:
-        assert True
+    except Exception:
+        # Capture all other errors. We just care that it exists.
+        pass
 
 
 def test_add():

@@ -4,12 +4,15 @@ from src.section4 import health
 
 
 def test_can_main():
+    """Test whether the main() function exists."""
     try:
         health.main()
     except AttributeError:
+        # main() is not implemented.
         assert False
-    finally:
-        assert True
+    except Exception:
+        # Capture all other errors. We don't care if it works, just that it exists.
+        pass
 
 
 def test_health(capsys):

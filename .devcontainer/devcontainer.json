@@ -9,6 +9,15 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is cre:wated.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"ms-python.black-formatter"
+			]
+		}
+	},
 	"postCreateCommand": "pip install --upgrade pip; pip install -r ./.devcontainer/requirements.txt"
 	// Configure tool-specific properties.
 	// "customizations": {},

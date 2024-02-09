@@ -11,9 +11,11 @@ def test_can_main():
     try:
         email_slicer.main()
     except AttributeError:
+        # main() is not implemented.
         assert False
-    finally:
-        assert True
+    except Exception:
+        # We don't care if main() doesn't work, just that it exists.
+        pass
 
 
 def test_main():
