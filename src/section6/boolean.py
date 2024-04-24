@@ -2,6 +2,23 @@
 
 """T."""
 
+x_val = 0
+y_val = 0
+
+
+def side_effect_x() -> int:
+    global x_val
+    x_val += 1
+
+    return x_val
+
+
+def side_effect_y() -> int:
+    global y_val
+    y_val += 1
+
+    return y_val
+
 
 def true_type():
     """The true_type function."""
@@ -15,25 +32,32 @@ def false_type():
     return type(False)
 
 
-def truthiness():
+def truthiness(*args) -> bool:
     """The truthiness function."""
 
-    if True and 1 and "1" and [0] and {"key": 0}:
-        return True
-    else:
-        return False
+    return all(args)
 
 
-def falsiness():
+def falsiness(*args) -> bool:
     """The falsiness function."""
 
-    if None or False or 0 or "" or [] or {}:
-        return False
-    else:
-        return True
+    return False if any(args) else True
+
+
+def and_short_stop() -> bool:
+    """The and_short_stop function."""
+
+    global x_val, y_val
+    x_val = 0
+    y_val = 0
+    a_val = 0
+    a_val and side_effect_x() and side_effect_y()
+    print(f"a_val[{a_val}], x_val[{x_val}], y_val[{y_val}]")
+
+    return True if (a_val + x_val + y_val) == 0 else False
 
 
 def main():
     """The main thing."""
 
-    pass
+    return true_type() and false_type() and truthiness(1) and falsiness(0)
