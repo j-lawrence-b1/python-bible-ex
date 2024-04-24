@@ -21,28 +21,34 @@ def test_can_main():
 def test_true_type():
     """Test true_type()."""
 
-    assert boolean.true_type() == bool
+    assert boolean.true_type() is bool
 
 
 def test_false_type():
     """Test true_type()."""
 
-    assert boolean.false_type() == bool
+    assert boolean.false_type() is bool
 
 
 def test_truthiness():
     """Test truthiness()."""
 
-    assert boolean.truthiness()
+    assert boolean.truthiness(True, 1, "1", [0], {"key": 0}) is True
 
 
 def test_falseiness():
     """Test falseiness()."""
 
-    assert boolean.falsiness()
+    assert boolean.falsiness(None, False, 0, "", [], {}) is True
+
+
+def test_and_short_stop():
+    """Test test_and_short_stop()."""
+
+    assert boolean.and_short_stop() is True
 
 
 def test_main():
     """Test main()."""
 
-    boolean.main()
+    assert boolean.main()
