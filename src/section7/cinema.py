@@ -19,18 +19,6 @@ films = {
 }
 
 
-def check_age(user_age, film_name):
-    return True if user_age >= films[film_name][0] else False
-
-
-def check_availability(film_name):
-    return True if films[film_name][1] > 0 else False
-
-
-def rent_film(film_name):
-    films[film_name][1] -= 1
-
-
 def main():
     """The main thing."""
 
@@ -44,13 +32,15 @@ def main():
         elif choice not in films:
             print("We don't have that film...")
         else:
-            if not check_age(age, choice):
+            min_age = films[choice][0]
+            num_seats = films[choice][1]
+            if age < min_age:
                 print("You are too young to view this film.")
                 continue
-            if not check_availability(choice):
+            if num_seats < 1:
                 print("This film is currently unavailable.")
                 continue
-            rent_film(choice)
+            films[choice][1] -= 1
             print("Enjoy the film!")
 
 
