@@ -23,22 +23,11 @@ def test_can_main():
         pass
 
 
-def test_quit(monkeypatch):
-    """Test quit."""
-
-    # Tested Dialog:
-    # -----------------
-    # My name is Travis. Who are you? []: quit
-    inputs = StringIO("Bob\nn\nquit\n")
-    monkeypatch.setattr("sys.stdin", inputs)
-    assert travis.main()
-
-
 def test_known_user(monkeypatch, capsys):
     """Test recognized name.
 
-    Tested Dialog: Lookup a known name.
-    -----------------------------------
+    Tested Dialog:
+    --------------
     My name is Travis. Who are you? []: bob
     Hello, Bob!
     Would you like to be removed from the system? Pleaase enter Y[es] or N[o]? [N]: n
@@ -54,7 +43,7 @@ def test_known_user(monkeypatch, capsys):
         "My name is Travis. Who are you? []: "
     )
     monkeypatch.setattr("sys.stdin", inputs)
-    assert travis.main()
+    travis.main()
     captured = capsys.readouterr()
     print(f"||{captured.out}||")
     print(f"||{expected}||")
@@ -64,8 +53,8 @@ def test_known_user(monkeypatch, capsys):
 def test_delete_user(monkeypatch, capsys):
     """Test recognized name.
 
-    Tested Dialog: Add a user and make sure they are added.
-    -------------------------------------------------------
+    Tested Dialog:
+    --------------
     My name is Travis. Who are you? []: bob
     Hello, Bob!
     Would you like to be removed from the system? Pleaase enter Y[es] or N[o]? [N]: y
@@ -84,7 +73,7 @@ def test_delete_user(monkeypatch, capsys):
         "My name is Travis. Who are you? []: "
     )
     monkeypatch.setattr("sys.stdin", inputs)
-    assert travis.main()
+    travis.main()
     captured = capsys.readouterr()
     print(f"||{captured.out}||")
     print(f"||{expected}||")
@@ -94,8 +83,8 @@ def test_delete_user(monkeypatch, capsys):
 def test_unknown_user(monkeypatch, capsys):
     """Test recognized name.
 
-    Tested Dialog: Lookup a non-existant user.
-    ------------------------------------------
+    Tested Dialog:
+    --------------
     My name is Travis. Who are you? []: Carol
     Hmmm I don't think I have met you yet, Carol
     Would you like to be added to the system? Pleaase enter Y[es] or N[o]? [N]: n
@@ -111,7 +100,7 @@ def test_unknown_user(monkeypatch, capsys):
         "My name is Travis. Who are you? []: "
     )
     monkeypatch.setattr("sys.stdin", inputs)
-    assert travis.main()
+    travis.main()
     captured = capsys.readouterr()
     print(f"||{captured.out}||")
     print(f"||{expected}||")
@@ -121,8 +110,8 @@ def test_unknown_user(monkeypatch, capsys):
 def test_add_user(monkeypatch, capsys):
     """Test recognized name.
 
-    Tested Dialog: Add a user then make sure they were actually added.
-    ------------------------------------------------------------------
+    Tested Dialog:
+    --------------
     My name is Travis. Who are you? []: Carol
     Hmmm I don't think I have met you yet, Carol
     Would you like to be added to the system? Pleaase enter Y[es] or N[o]? [N]: y
@@ -142,7 +131,7 @@ def test_add_user(monkeypatch, capsys):
         "My name is Travis. Who are you? []: "
     )
     monkeypatch.setattr("sys.stdin", inputs)
-    assert travis.main()
+    travis.main()
     captured = capsys.readouterr()
     print(f"||{captured.out}||")
     print(f"||{expected}||")

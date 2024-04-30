@@ -20,3 +20,21 @@ def prompt(pmpt: str = "", dflt: str = "") -> str:
         retval = dflt
 
     return retval
+
+
+def prompt_yn(pmpt: str = "Enter Y[es] or N[o]", dflt: str = "N") -> bool:
+    """
+    Prompt for a yes or no answer.
+
+    Keyword arguments:
+    pmpt -- Desired input hint (default: \"Enter Y[es] or N[o]\"').
+    dflt -- Default input value (default: \"N\").
+
+    Return:
+    bool(True), if input begins with "Y" or "y", else False.
+    """
+    return (
+        True
+        if prompt(f"{pmpt}? Pleaase enter Y[es] or N[o]", dflt).upper().startswith("Y")
+        else False
+    )

@@ -39,8 +39,6 @@ def main():
             else:
                 print("OK, maybe next time.")
 
-    return True
-
 
 if __name__ == "__main__":
     main()
