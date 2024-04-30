@@ -39,8 +39,6 @@ def test_quit(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdin", inputs)
     cinema.main()
     captured = capsys.readouterr()
-    print(f"||{captured.out}||")
-    print(f"||{expected}||")
     assert captured.out == expected
 
 
@@ -65,8 +63,6 @@ def test_unknown_film(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdin", inputs)
     cinema.main()
     captured = capsys.readouterr()
-    print(f"||{captured.out}||")
-    print(f"||{expected}||")
     assert captured.out == expected
 
 
@@ -91,6 +87,4 @@ def test_unknown_film(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdin", inputs)
     cinema.main()
     captured = capsys.readouterr()
-    print(f"||{captured.out}||")
-    print(f"||{expected}||")
     assert captured.out == expected

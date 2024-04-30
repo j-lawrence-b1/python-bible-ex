@@ -45,8 +45,6 @@ def test_known_user(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdin", inputs)
     travis.main()
     captured = capsys.readouterr()
-    print(f"||{captured.out}||")
-    print(f"||{expected}||")
     assert captured.out == expected
 
 
@@ -75,8 +73,6 @@ def test_delete_user(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdin", inputs)
     travis.main()
     captured = capsys.readouterr()
-    print(f"||{captured.out}||")
-    print(f"||{expected}||")
     assert captured.out == expected
 
 
@@ -102,8 +98,6 @@ def test_unknown_user(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdin", inputs)
     travis.main()
     captured = capsys.readouterr()
-    print(f"||{captured.out}||")
-    print(f"||{expected}||")
     assert captured.out == expected
 
 
@@ -133,6 +127,4 @@ def test_add_user(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdin", inputs)
     travis.main()
     captured = capsys.readouterr()
-    print(f"||{captured.out}||")
-    print(f"||{expected}||")
     assert captured.out == expected
