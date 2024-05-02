@@ -4,6 +4,7 @@
 
 # Python imports.
 from io import StringIO
+import re
 
 # Application imports.
 from src.lib import console
@@ -26,21 +27,20 @@ def test_can_main():
 
 
 def test_why(monkeypatch, capsys):
-    """Test why.
+    """Test just because.
 
     Tested Dialog:
     --------------
-    Why? []:
-    Because
-    Why? quit
-    Shaddup, already!
+    Why <something>? []:
+    just because
     Waahh!
     """
 
-    inputs = StringIO("6\nquit\n")
+    inputs = StringIO("just because\n")
     # sys.capsys swallows the newline after the prompt.
-    expected = "Why? []: Why? []: Shaddup, already!\n" "Waahh!\n"
+    # Using a regex because questions are random.
+    expected_regex = re.compile("^Why([^?]+)\? \[\]: Waahh\!\n$")
     monkeypatch.setattr("sys.stdin", inputs)
     baby.main()
     captured = capsys.readouterr()
-    assert captured.out == expected
+    assert expected_regex.search(captured.out).group() == captured.out
